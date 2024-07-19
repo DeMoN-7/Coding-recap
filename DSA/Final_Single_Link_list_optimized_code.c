@@ -55,7 +55,39 @@ node *insert(node *head)
     }
     return head;
 }
-
+node* insert_atLast(node * head){
+    node* temp=head,*new_node;
+    new_node = memory();
+    int num;
+    printf("Enter the number: ");
+    scanf("%d", &num);
+    new_node->data = num;
+    if (head == 0)
+    {
+        head = new_node;
+    }
+    else
+    {
+        while (temp->next != 0)
+        {
+            temp = temp->next;
+        }
+        temp->next= new_node;
+    }
+    return head;
+}
+node* ins_first(node * head){
+    node * temp=head,*new_node;
+    int num;
+    printf("Enter the number: ");
+    scanf("%d", &num);
+    new_node=memory();
+    new_node->next=temp;
+    new_node->data=num;
+    // head=new_node;
+    return new_node;
+    
+}
 void main()
 {
 
@@ -69,6 +101,12 @@ void main()
         {
         case 1:
             head = insert(head);
+            break;
+        case 2:
+            head= insert_atLast(head);
+            break;
+        case 3:
+            head=ins_first(head);
             break;
         case 10:
             display(head);

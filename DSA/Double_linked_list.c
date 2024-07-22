@@ -38,7 +38,26 @@ node *insert(node *head)
     }
     return head;
 }
-void display(node * head){
+node *delete_last(node *head)
+{
+    node *temp = head;
+    if (head == NULL)
+    {
+        printf("Link List is Empty");
+        return head;
+    }
+    else
+    {
+        while (temp->next->next != 0)
+        {
+            temp = temp->next;
+        }
+        temp->next = NULL;
+    }
+    return head;
+}
+void display(node *head)
+{
     printf("\n\tLink list:-\n");
     node *temp = head;
     if (head == 0)
@@ -56,11 +75,38 @@ void display(node * head){
     }
     printf("\n");
 }
+void display_reverse(node *head)
+{
+    node *temp = head;
+    if (head == 0)
+    {
+        printf("Link list is empty: \n");
+    }
+    else
+    {
+        printf("Reversed Link list :");
+        while (temp->next != 0)
+        {
+            temp = temp->next;
+        }
+        while (temp->back != 0)
+        {
+            printf("%d\t", temp->data);
+            temp = temp->back;
+        }
+        printf("%d\t", temp->data);
+    }
+}
 void main()
 {
     node *head = 0;
     head = insert(head);
     head = insert(head);
     head = insert(head);
+    display(head);
+    display_reverse(head);
+    head = delete_last(head);
+    display(head);
+    head = delete_last(head);
     display(head);
 }

@@ -124,7 +124,7 @@ node *ins_at_pos(node *head)
     {
         new_node = memory();
         new_node->data = num;
-        for (int i = 1; i < pos-1; i++)
+        for (int i = 1; i < pos - 1; i++)
         {
             temp = temp->next;
         }
@@ -135,8 +135,74 @@ node *ins_at_pos(node *head)
 
     return head;
 }
-node * ins_bef_pos(node * head){
-    
+node *ins_aft_pos(node *head)
+{
+    node *temp = head, *temp2, *new_node;
+    int num, pos;
+    int siz = size(head);
+    printf("Enter the positon you want to enter: ");
+    scanf("%d", &pos);
+    if (pos > siz)
+    {
+        printf("\nYou are trying to access an out-of-range element.\n");
+    }
+    else
+    {
+        printf("Enter the number: ");
+        scanf("%d", &num);
+        new_node = memory();
+        new_node->data = num;
+        for (int i = 1; i < pos; i++)
+        {
+            temp = temp->next;
+        }
+        temp2 = temp->next;
+        temp->next = new_node;
+        new_node->next = temp2;
+    }
+
+    return head;
+}
+node *ins_bef_pos(node *head)
+{
+    node *temp = head, *temp2, *new_node;
+    int num, pos;
+
+    int siz = size(head);
+    printf("Enter the positon you want to enter: ");
+    scanf("%d", &pos);
+    if (pos > siz)
+    {
+        printf("\nYou are trying to access an out-of-range element.\n");
+    }
+    else if (pos == 1)
+    {
+        return ins_first(head);
+    }
+    else
+    {
+        printf("Enter the number: ");
+        scanf("%d", &num);
+        new_node = memory();
+        new_node->data = num;
+        for (int i = 1; i < pos - 2; i++)
+        {
+            temp = temp->next;
+        }
+        temp2 = temp->next;
+        temp->next = new_node;
+        new_node->next = temp2;
+    }
+
+    return head;
+}
+node *del_last(node *head){
+    node * temp=head;
+    while(temp->next->next!=0){
+        temp=temp->next;
+    }
+    temp->next=NULL;
+    return head;
 }
 void main()
 {
@@ -162,6 +228,14 @@ void main()
         case 4:
             head = ins_at_pos(head);
             break;
+        case 5:
+            head = ins_aft_pos(head);
+            break;
+        case 6:
+            head = ins_bef_pos(head);
+            break;
+        case 7:
+            head=del_last(head);
         case 10:
             display(head);
             break;

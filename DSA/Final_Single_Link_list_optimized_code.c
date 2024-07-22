@@ -198,10 +198,18 @@ node *ins_bef_pos(node *head)
 }
 node *del_last(node *head){
     node * temp=head;
+    int siz=size(head);
+    if(siz==1){
+        head=0;
+        return head;
+    }
+    else{
+
     while(temp->next->next!=0){
         temp=temp->next;
     }
     temp->next=NULL;
+    }
     return head;
 }
 void main()

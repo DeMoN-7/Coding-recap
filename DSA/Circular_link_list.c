@@ -85,6 +85,6 @@ void main()
     display(head);
 
     head=delete_last(head);
-    display(head);
+    display(head);//not created switch function 
 
 }

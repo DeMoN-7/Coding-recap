@@ -24,6 +24,7 @@ node *insert(node *head)
         head=new_node;
         new_node->next=head;
         return head;
+//comment 
     }
     else{
         while (temp->next!=head)
@@ -85,6 +86,6 @@ void main()
     display(head);
 
     head=delete_last(head);
-    display(head);
+    display(head);//not created switch function 
 
 }

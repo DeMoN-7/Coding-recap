@@ -1,6 +1,7 @@
 # Coding-recap
 <h1>Just quick revision for MCA</h1>
 <li>Basics of C++</li>
+<li>DSA</li>li
 <li>Main Topics syntax revison of c </li>
     <ol>
     <li>Struct data type</li>

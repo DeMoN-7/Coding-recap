@@ -9,3 +9,4 @@
     <li>pointers</ki>
     </ol>
 <li>Basics of Java</li>
+Just fun activities to survive in Rat race

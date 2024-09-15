@@ -29,5 +29,9 @@ public static void main(String[] args) {
     list.remove(2);
     System.out.println(list);
 
+    //collection library has function sort that sort the arrayList
+    Collections.sort(list);
+    System.out.println(list);
+
 }    
 }

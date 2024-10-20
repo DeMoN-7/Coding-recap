@@ -15,11 +15,15 @@ public class justRevision {
 
         System.out.println(list.get(0));
         System.out.println("Size:"+list.size());
-
+        list.add(0,11);
+        System.out.println(list);
 
         for (int i=0;i<list.size();i++){
             for(int j=0;j<list.size();j++){
-                
+                if(list.get(i)<list.get(j)){
+                    int temp=list.get(i);
+                    // list.
+                }
             }
         }
     }

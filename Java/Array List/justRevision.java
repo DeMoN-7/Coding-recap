@@ -5,6 +5,8 @@ public class justRevision {
         ArrayList<Integer> list=new ArrayList<>();
         list.add(21);
         list.add(32);
+        list.add(12);
+        list.add(52);
         System.out.println(list);
 
         for (int x:list){
@@ -13,5 +15,12 @@ public class justRevision {
 
         System.out.println(list.get(0));
         System.out.println("Size:"+list.size());
+
+
+        for (int i=0;i<list.size();i++){
+            for(int j=0;j<list.size();j++){
+                
+            }
+        }
     }
 }

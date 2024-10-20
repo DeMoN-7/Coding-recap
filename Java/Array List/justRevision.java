@@ -12,6 +12,7 @@ public class justRevision {
         for (int x:list){
             System.out.println(x*100);
         }
+        
 
         System.out.println(list.get(0));
         System.out.println("Size:"+list.size());

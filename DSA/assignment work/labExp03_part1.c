@@ -175,6 +175,7 @@ void main(){
             break;
         case 5:
             head=del_first(head);
+            break;
         case 6:
             head=del_certain_node(head);
         case 7:

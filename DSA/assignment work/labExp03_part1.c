@@ -134,6 +134,22 @@ node * del_first(node * head){
 }
 node * del_certain_node(node * head){
     node * temp=head;
+    int n;
+    printf("Enter the index of node you want to delete");
+    scanf("%d",&n);
+    if(n>size(head)){
+        printf("Index out of bound");
+        return head;
+    }
+    if(n==size(head)){
+        return del_last(head);
+    }
+    else{
+        for(int i=1;i<n-1;i++){
+            temp=temp->next;
+        }
+        temp->next=temp->next->next;
+    }
     return head;
 }
 void main(){

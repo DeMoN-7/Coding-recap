@@ -41,19 +41,14 @@ node *insert(node *head)
 node *delete_last(node *head)
 {
     node *temp = head;
-    if (head == NULL)
-    {
-        printf("Link List is Empty");
-        return head;
-    }
-    else
-    {
+    
+    
         while (temp->next->next != 0)
         {
             temp = temp->next;
         }
         temp->next = NULL;
-    }
+    
     return head;
 }
 void display(node *head)

@@ -10,7 +10,7 @@ public class file1 {
                 System.out.println("File created");
             }
         }catch(IOException e){
-            System.out.println("File not found");
+            System.out.println("File not Created");
         }
     }
 }

@@ -8,6 +8,11 @@ public class FileInformation {
             System.out.println(f.getAbsolutePath());
             System.out.print("Name: ");
             System.out.println(f.getName());
+            System.out.println("Readable:"+f.canRead());
+            System.out.println("Writable:"+f.canWrite());
+            System.out.println("Setting file writable");
+            f.setReadOnly();
+            System.out.println("Writable:"+f.canWrite());
 
         }
         else{

@@ -19,12 +19,24 @@ public class Link_list {
         new_node.next=head;
         head=new_node;
     }
-    public void printList()
+    public void printList(){
+        if (head==null) {
+            System.out.println("List is empty");
+        }
+        else{
+            Node temp=head;
+            while(temp!=null){
+                System.out.println(temp.data);
+                temp=temp.next;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         Link_list list =new Link_list();
         list.addFirst("he");
         list.addFirst("hell");
         list.addFirst("hello");
+        list.printList();
     }
 }

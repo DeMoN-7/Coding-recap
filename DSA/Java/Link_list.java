@@ -36,15 +36,29 @@ public class Link_list {
 
     }
 
+    public void deleteLastNode(){
+        if (head==null) {
+            System.out.println("List is already empty");
+            return;
+        }
+        Node temp=head;
+        while (temp.next.next!=null) {
+            temp=temp.next;
+        }
+        temp.next=null;
+
+    }
+
     public void printList() {
         if (head == null) {
             System.out.println("List is empty");
         } else {
             Node temp = head;
             while (temp != null) {
-                System.out.println(temp.data);
+                System.out.print(temp.data+"->");
                 temp = temp.next;
             }
+            System.out.println("null");
         }
     }
 
@@ -56,10 +70,8 @@ public class Link_list {
         list.addLast("DJdd");
         list.addLast("DJddd");
         list.printList();
-        System.out.println("...........................");
-        list.addFirst("he");
-        list.addFirst("hell");
-        list.addFirst("hello");
+        list.deleteLastNode();
         list.printList();
+        
     }
 }

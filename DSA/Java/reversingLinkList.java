@@ -33,8 +33,23 @@ public class reversingLinkList {
             System.out.println("null");
         }
     }
+    public void reverse(){
+        Node temp=head;
+        while (temp.next!=null) {
+            int a=temp.data;
+            temp.data=temp.next.data;
+            temp.next.data=a;
+            temp=temp.next;
+        }
+    }
     public static void main(String[] args) {
         reversingLinkList list=new reversingLinkList();
-
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+        list.printList();
+        list.reverse();
+        list.printList();
     }
 }

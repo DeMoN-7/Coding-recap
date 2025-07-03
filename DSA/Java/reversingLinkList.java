@@ -34,13 +34,16 @@ public class reversingLinkList {
         }
     }
     public void reverse(){
-        Node temp=head;
-        while (temp.next!=null) {
-            int a=temp.data;
-            temp.data=temp.next.data;
-            temp.next.data=a;
-            temp=temp.next;
+        Node currentNode=head;
+        Node prevNode=null;
+
+        while (currentNode!=null) {
+            Node next=currentNode.next;
+            currentNode.next=prevNode;
+            prevNode=currentNode;
+            currentNode=next;
         }
+        head=prevNode;
     }
     public static void main(String[] args) {
         reversingLinkList list=new reversingLinkList();
@@ -48,6 +51,9 @@ public class reversingLinkList {
         list.addLast(2);
         list.addLast(3);
         list.addLast(4);
+        list.addLast(5);
+        list.addLast(6);
+        list.addLast(7);
         list.printList();
         list.reverse();
         list.printList();

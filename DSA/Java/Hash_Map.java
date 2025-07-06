@@ -12,5 +12,7 @@ public class Hash_Map {
         System.out.println(map);
         map.put(3, "Mukesh");
         System.out.println(map);
+        System.out.println(map.containsKey("Ayush"));
+        System.out.println(map.get(1));
     }
 }

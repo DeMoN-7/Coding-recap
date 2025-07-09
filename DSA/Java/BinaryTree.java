@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class BinaryTree {
     static class Node{
         int data;
@@ -30,22 +33,26 @@ public class BinaryTree {
         preorder(root.left);
         preorder(root.right);
     }
+    static ArrayList<Integer> list=new ArrayList<>();
     public static void inorder(Node root){
         if (root==null) {
             return;
         }
-        preorder(root.left);
+        inorder(root.left);
+        list.add(root.data);
         System.out.print(root.data+" ");
-        preorder(root.right);
+        inorder(root.right);
     }
+
     public static void postorder(Node root){
         if (root==null) {
             return;
         }
-        preorder(root.left);
-        preorder(root.right);
+        postorder(root.left);
+        postorder(root.right);
         System.out.print(root.data+" ");
     }
+    
     public static void main(String[] args) {
         int []nodes={1, 2, 4, -1, -1, 3, -1, -1, 5, 6, -1, -1, 55, -1, -1};
         CreateBinaryTree cbt=new CreateBinaryTree();
@@ -57,5 +64,7 @@ public class BinaryTree {
         inorder(root);
         System.out.println("\nPostorder");
         postorder(root);
+        System.out.println("\nArrayList");
+        System.out.println(list);
     }
 }

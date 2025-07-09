@@ -1,5 +1,5 @@
-import java.util.HashMap;
-
+// import java.util.HashMap;
+import java.util.*;
 public class Hash_Map {
     public static void main(String[] args) {
         HashMap<Integer,String>map=new HashMap<>();
@@ -14,5 +14,9 @@ public class Hash_Map {
         System.out.println(map);
         System.out.println(map.containsKey("Ayush"));
         System.out.println(map.get(1));
+
+        for(Map.Entry<Integer,String> e:map.entrySet()){
+            if(e.getKey()==e.getValue())
+        }
     }
 }

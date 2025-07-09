@@ -22,10 +22,40 @@ public class BinaryTree {
              return newNode;
         }
     }
+    public static void preorder(Node root){
+        if (root==null) {
+            return;
+        }
+        System.out.print(root.data+" ");
+        preorder(root.left);
+        preorder(root.right);
+    }
+    public static void inorder(Node root){
+        if (root==null) {
+            return;
+        }
+        preorder(root.left);
+        System.out.print(root.data+" ");
+        preorder(root.right);
+    }
+    public static void postorder(Node root){
+        if (root==null) {
+            return;
+        }
+        preorder(root.left);
+        preorder(root.right);
+        System.out.print(root.data+" ");
+    }
     public static void main(String[] args) {
-        int []nodes={1,2,4,-1,-1,3,-1,-1,5,6,-1,55};
+        int []nodes={1, 2, 4, -1, -1, 3, -1, -1, 5, 6, -1, -1, 55, -1, -1};
         CreateBinaryTree cbt=new CreateBinaryTree();
         Node root=cbt.BuildTree(nodes);
-
+        System.out.println(root.data);
+        System.out.println("Preorder");
+        preorder(root);
+        System.out.println("\nInorder");
+        inorder(root);
+        System.out.println("\nPostorder");
+        postorder(root);
     }
 }
